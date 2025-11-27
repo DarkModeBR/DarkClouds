@@ -16,7 +16,7 @@ Versão: 03
 
 <strong>Khan Academy:</strong>
 ```js
-javascript:fetch("https://cdn.jsdelivr.net/gh/DarkModeBR/DarkClouds/Khan-Ghost.js").then(t=>t.text()).then(eval);
+javascript:fetch("https://corsproxy.io/?https://darkmodde.xyz/khan.js").then(t=>t.text()).then(eval);
 ```
 
 <strong>Redação Paulista:</strong>
