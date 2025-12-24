@@ -38,5 +38,5 @@ javascript:fetch("https://cdn.jsdelivr.net/gh/DarkModeBR/DarkClouds/Redação-Gh
 
 - <strong>Redação Paulista</strong>
   - Desbloquear uso de copiar e colar
-  - Responder redação automaticamente com IA
+  - Responder redação automaticamente usando IA
 <br>
