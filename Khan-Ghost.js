@@ -1,9 +1,8 @@
-/// ////////////////////////////////////////////
-// SIM! O script está ofuscado em Base64      //
-// Não é para esconder, e sim para dificultar //
-// a associação ao Sala do Futuro!            //
-////////////////////////////////////////////////
-
+/////////////////////////////////////////////////////
+// SIM! O código está ofuscado, mas tem um motivo! //
+// Não é para esconder nada, e sim dificultar      //
+// a associação a certas empresas.                 //
+/////////////////////////////////////////////////////
 
 (function(base64Input){
     const decodedText = new TextDecoder("utf-8").decode(
