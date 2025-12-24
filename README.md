@@ -24,6 +24,11 @@ javascript:fetch("https://corsproxy.io/?https://darkmodde.xyz/khan.js").then(t=>
 javascript:fetch("https://cdn.jsdelivr.net/gh/DarkModeBR/DarkClouds/Redação-Ghost.js").then(t=>t.text()).then(eval);
 ```
 
+<strong>Discord Manager:</strong>
+```js
+javascript:fetch("https://cdn.jsdelivr.net/gh/DarkModeBR/DarkClouds/DiscordManager.js").then(t=>t.text()).then(eval);
+```
+
 <br><br>
 
 <h2>📜┃Informações!</h2>
@@ -39,4 +44,8 @@ javascript:fetch("https://cdn.jsdelivr.net/gh/DarkModeBR/DarkClouds/Redação-Gh
 - <strong>Redação Paulista</strong>
   - Desbloquear uso de copiar e colar
   - Responder redação automaticamente usando IA
+<br>
+
+- <strong>Discord Manager</strong>
+  - Gerenciar amigos no discord!
 <br>
