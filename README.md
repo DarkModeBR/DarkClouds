@@ -48,4 +48,6 @@ javascript:(function()%7B(async () %3D> %7B%0A    if (!window.location.hostname.
 
 - <strong>Discord Manager</strong>
   - Gerenciar amigos no discord!
+  - Gerenciar servidores no discord!
+  - Apagar mensagens da DM
 <br>
