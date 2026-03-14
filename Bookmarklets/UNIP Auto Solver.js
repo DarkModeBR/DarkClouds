@@ -1,133 +1,181 @@
-(function () {
+(async () => {
+  if (document.getElementById("__qs__")) return;
 
-  if (document.getElementById("__overlay__")) return;
+  const css = `
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
-  function showOverlay(message, done = false) {
-    let overlay = document.getElementById("__overlay__");
-
-    if (!overlay) {
-      overlay = document.createElement("div");
-      overlay.id = "__overlay__";
-      overlay.style.cssText = `
-        position: fixed; inset: 0; z-index: 999999;
-        background: rgba(0, 0, 0, 0.92);
-        display: flex; flex-direction: column;
-        align-items: center; justify-content: center;
-        gap: 20px; font-family: 'Segoe UI', sans-serif;
-        transition: opacity 0.5s ease;
-      `;
-      document.body.appendChild(overlay);
+    #__qs__ {
+      position: fixed;
+      inset: 0;
+      z-index: 2147483647;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
-    overlay.innerHTML = done ? `
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-        <circle cx="32" cy="32" r="30" stroke="#4ade80" stroke-width="4"/>
-        <polyline points="18,33 28,43 46,22" stroke="#4ade80" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <p style="color:#4ade80;font-size:20px;font-weight:600;margin:0;letter-spacing:0.5px;">Respondido com sucesso!</p>
-    ` : `
-      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" style="animation: spin 1s linear infinite;">
-        <circle cx="28" cy="28" r="24" stroke="#ffffff22" stroke-width="5"/>
-        <path d="M28 4 A24 24 0 0 1 52 28" stroke="#a78bfa" stroke-width="5" stroke-linecap="round"/>
-      </svg>
-      <p style="color:#e2e8f0;font-size:18px;font-weight:500;margin:0;letter-spacing:0.3px;">${message}</p>
-      <style>@keyframes spin { to { transform: rotate(360deg); } }</style>
-    `;
+    #__qs__.visible { opacity: 1; }
 
-    if (done) {
+    #__qs_box__ {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    #__qs_spinner__ {
+      width: 36px;
+      height: 36px;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-top-color: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      animation: __qs_spin__ 0.8s linear infinite;
+    }
+
+    #__qs_msg__ {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 0.3px;
+    }
+
+    #__qs_check__ {
+      display: none;
+      width: 36px;
+      height: 36px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #__qs_check__ svg {
+      width: 28px;
+      height: 28px;
+      stroke: rgba(255, 255, 255, 0.85);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      stroke-dasharray: 40;
+      stroke-dashoffset: 40;
+      animation: __qs_draw__ 0.4s ease forwards;
+    }
+
+    @keyframes __qs_spin__ { to { transform: rotate(360deg); } }
+    @keyframes __qs_draw__ { to { stroke-dashoffset: 0; } }
+  `;
+
+  const styleEl = document.createElement("style");
+  styleEl.id = "__qs_style__";
+  styleEl.textContent = css;
+  document.head.appendChild(styleEl);
+
+  const overlay = document.createElement("div");
+  overlay.id = "__qs__";
+  overlay.innerHTML = `
+    <div id="__qs_box__">
+      <div id="__qs_spinner__"></div>
+      <div id="__qs_check__">
+        <svg viewBox="0 0 28 28"><polyline points="5,14 11,20 23,8"/></svg>
+      </div>
+      <div id="__qs_msg__">Aguarde...</div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+  requestAnimationFrame(() => overlay.classList.add("visible"));
+
+  const setMsg = (t) => { document.getElementById("__qs_msg__").textContent = t; };
+
+  const done = (count, total) => {
+    document.getElementById("__qs_spinner__").style.display = "none";
+    const check = document.getElementById("__qs_check__");
+    check.style.display = "flex";
+    setMsg(`${count} de ${total} respondidas`);
+    setTimeout(() => {
+      overlay.style.opacity = "0";
       setTimeout(() => {
-        overlay.style.opacity = "0";
-        setTimeout(() => overlay.remove(), 500);
-      }, 2000);
-    }
-  }
+        overlay.remove();
+        styleEl.remove();
+      }, 300);
+    }, 1800);
+  };
 
-  function cleanText(text) {
-    return (text || "")
-      .replace(/\(\s*[ivxIVX]+\s*\)/g, "")
-      .replace(/\([^)]+\)/g, "")
-      .replace(/\s+/g, " ")
-      .trim();
-  }
-
-  function getQuestions() {
-    return [...document.querySelectorAll('.takeQuestionDiv')].map((div, i) => {
-      const title = div.querySelector('.steptitle')?.innerText.trim().toUpperCase() || `PERGUNTA ${i + 1}`;
-      const descricao = cleanText(div.querySelector('legend')?.innerText || "");
-      const opcoes = [...div.querySelectorAll('table.multiple-choice-table tr')].reduce((acc, row) => {
-        const letra = row.querySelector('.multiple-choice-numbering')?.innerText.replace('.', '').trim();
-        const texto = cleanText(row.querySelector('label')?.innerText || "");
-        if (letra && texto) acc.push({ letra, texto });
-        return acc;
-      }, []);
-      return { pergunta: title, descricao, opcoes };
-    });
-  }
-
-  function markAnswers(data) {
-    document.querySelectorAll('.takeQuestionDiv').forEach((div, i) => {
-      const title = div.querySelector('.steptitle')?.innerText.trim().toUpperCase() || `PERGUNTA ${i + 1}`;
-      const found = Array.isArray(data) ? data.find(q => q.pergunta?.toUpperCase() === title) : null;
-      const correct = (found?.resposta || data[title] || "").toLowerCase();
-      if (!correct) return;
-
-      div.querySelectorAll('table.multiple-choice-table tr').forEach(row => {
-        const letra = row.querySelector('.multiple-choice-numbering')?.innerText.replace('.', '').trim().toLowerCase();
-        const radio = row.querySelector('input[type="radio"]');
-        if (letra && radio && letra === correct) {
-          radio.checked = true;
-          row.style.background = "#14532d";
-        }
+  const extractQuestions = () => {
+    const questions = [];
+    document.querySelectorAll(".takeQuestionDiv").forEach((div, i) => {
+      const text = div.querySelector("legend")?.innerText?.trim();
+      const options = [];
+      div.querySelectorAll("table tr").forEach((row) => {
+        const label = row.querySelector(".multiple-choice-numbering")?.innerText?.trim();
+        const answer = row.querySelector("label")?.innerText?.trim();
+        const input = row.querySelector("input[type=radio]");
+        if (label && answer && input)
+          options.push({ label, answer, value: input.value, name: input.name });
       });
+      if (text && options.length) questions.push({ index: i + 1, text, options });
     });
+    return questions;
+  };
+
+  const askAI = async (prompt) => {
+    const res = await fetch("https://quillbot.squareweb.app/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: prompt }),
+    });
+    const data = await res.json();
+    const raw = data.reply ?? data.response ?? data.message ?? JSON.stringify(data);
+    return typeof raw === "string" ? raw : JSON.stringify(raw);
+  };
+
+  const buildPrompt = (questions) => {
+    let p = `Responda cada pergunta abaixo com a letra correta (a, b, c, d ou e). Retorne APENAS um JSON no formato: {"respostas": {"1": "b", "2": "c", ...}} sem nenhum texto adicional.\n\n`;
+    questions.forEach((q) => {
+      p += `Pergunta ${q.index}: ${q.text}\n`;
+      q.options.forEach((o) => (p += `${o.label} ${o.answer}\n`));
+      p += "\n";
+    });
+    return p;
+  };
+
+  const markAnswers = (questions, answers) => {
+    let marked = 0;
+    questions.forEach((q) => {
+      const letter = answers[String(q.index)]?.toLowerCase();
+      if (!letter) return;
+      const opt = q.options.find((o) => o.label.replace(".", "").trim().toLowerCase() === letter);
+      if (!opt) return;
+      const input = document.querySelector(`input[name="${opt.name}"][value="${opt.value}"]`);
+      if (input) { input.click(); marked++; }
+    });
+    return marked;
+  };
+
+  setMsg("Lendo perguntas...");
+  const questions = extractQuestions();
+
+  setMsg("Consultando IA...");
+  const raw = await askAI(buildPrompt(questions));
+
+  let answers;
+  try {
+    const match = raw.match(/\{[\s\S]*\}/);
+    if (!match) throw new Error();
+    const obj = JSON.parse(match[0]);
+    answers = typeof obj.respostas === "string"
+      ? JSON.parse(obj.respostas)
+      : obj.respostas ?? obj;
+  } catch {
+    setMsg("Erro ao processar resposta.");
+    setTimeout(() => { overlay.remove(); styleEl.remove(); }, 2500);
+    return;
   }
 
-  async function run() {
-    showOverlay("Analisando perguntas...");
-
-    const questions = getQuestions();
-
-    const prompt = `
-Responda corretamente cada questão abaixo.
-Retorne APENAS JSON válido, sem texto extra.
-
-Formato:
-[
-  { "pergunta": "PERGUNTA 1", "resposta": "a" }
-]
-
-Questões:
-${JSON.stringify(questions, null, 2)}
-`;
-
-    showOverlay("Consultando IA...");
-
-    try {
-      const res = await fetch(
-        "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=AIzaSyCAO2-H0-cVVJDb9op5R2o1eo6wa6NJjhY",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-        }
-      );
-
-      const data = await res.json();
-      const raw = data.candidates?.[0]?.content?.parts?.[0]?.text || "";
-      const match = raw.match(/\[[\s\S]*\]|\{[\s\S]*\}/);
-
-      if (!match) throw new Error("JSON não encontrado na resposta.");
-
-      markAnswers(JSON.parse(match[0]));
-      showOverlay("", true);
-
-    } catch (err) {
-      console.error(err);
-      showOverlay("Erro ao obter resposta.");
-      setTimeout(() => document.getElementById("__overlay__")?.remove(), 3000);
-    }
-  }
-
-  run();
-
+  setMsg("Marcando respostas...");
+  const marked = markAnswers(questions, answers);
+  done(marked, questions.length);
 })();
