@@ -1,0 +1,333 @@
+Windows Registry Editor Version 5.00
+
+; ============================================================
+;  Revo Uninstaller Pro - Configurações Otimizadas
+;  Idioma: Português (Brasil)
+; ============================================================
+
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro]
+
+; ─────────────────────────────────────────────
+;  GENERAL - Configurações gerais essenciais
+; ─────────────────────────────────────────────
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\General]
+"Language file"="portuguesebrazil.ini"
+"WebLang"="PT-BR"
+"VFR"=dword:00000000
+"TE"=dword:00000001
+"FIRST_START_V5"=dword:00000000
+"AU on startup"=dword:00000000
+"Skip Info"=dword:00000001
+"Skip Warn"=dword:00000001
+"ShowCMCmds"=dword:00000000
+"SRInCP"=dword:00000000
+
+; ─────────────────────────────────────────────
+;  VIEW - Tema, aparência e animações
+; ─────────────────────────────────────────────
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\View]
+"Show Startup Splash"=dword:00000000
+"CHECK_DARK_MODE"=dword:00000001
+"Theme"=dword:00000002
+"Small Icons in Details"=dword:00000000
+"Disable all text animations"=dword:00000000
+"CBTXTCLR"=dword:ffffffff
+
+; ─────────────────────────────────────────────
+;  PROFUIS - Interface e perfil visual (ControlBar, DynamicBarSite, CommandManager)
+; ─────────────────────────────────────────────
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\ProfUIS\Profiles\Revo Uninstaller Pro\ControlBar]
+"data_size"=dword:00000278
+"data_integrity"="06 B3 53 50 08 77 4B 00 04 54 96 C0 0C EC BF 30"
+"data_generator"="Prof-UIS registry archiver rev. 0"
+"library_version"="Prof-UIS v. 3.4.6.0"
+"data_line_size"=dword:00000010
+"data_block_size"=dword:00000080
+"data_fmt_rev"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\ProfUIS\Profiles\Revo Uninstaller Pro\ControlBar\block_0x00000000]
+"data_0x00000000"=hex:03,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+"data_0x00000001"=hex:00,00,00,00,ff,fe,ff,27,50,00,72,00,6f,00,66,00
+"data_0x00000002"=hex:2d,00,55,00,49,00,53,00,20,00,28,00,76,00,2e,00
+"data_0x00000003"=hex:20,00,33,00,2e,00,34,00,2e,00,36,00,2e,00,30,00
+"data_0x00000004"=hex:29,00,20,00,63,00,6f,00,6e,00,74,00,72,00,6f,00
+"data_0x00000005"=hex:6c,00,20,00,62,00,61,00,72,00,20,00,73,00,74,00
+"data_0x00000006"=hex:61,00,74,00,65,00,00,06,04,03,04,03,00,00,00,00
+"data_0x00000007"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,ff,fe
+"data_0x00000008"=hex:ff,12,37,00,38,00,2c,00,37,00,38,00,2c,00,31,00
+"data_0x00000009"=hex:35,00,31,00,38,00,2c,00,38,00,33,00,31,00,2c,00
+"data_0x0000000A"=hex:33,00,2c,00,32,00,02,00,00,00,80,07,00,00,38,04
+"data_0x0000000B"=hex:00,00,06,00,1b,e8,00,00,01,00,00,00,00,00,00,00
+"data_0x0000000C"=hex:01,00,00,00,ff,ff,ff,ff,ff,ff,ff,ff,ff,7f,00,00
+"data_0x0000000D"=hex:00,00,00,00,01,00,00,00,00,00,1e,e8,00,00,01,00
+"data_0x0000000E"=hex:00,00,00,00,00,00,01,00,00,00,ff,ff,ff,ff,ff,ff
+"data_0x0000000F"=hex:ff,ff,ff,7f,00,00,00,00,00,00,01,00,00,00,00,00
+"data_0x00000010"=hex:1c,e8,00,00,01,00,00,00,00,00,00,00,00,00,00,00
+"data_0x00000011"=hex:ff,ff,ff,ff,ff,ff,ff,ff,ff,7f,00,00,00,00,00,00
+"data_0x00000012"=hex:03,00,00,00,00,00,8a,2b,00,00,00,00,00,00,1d,e8
+"data_0x00000013"=hex:00,00,01,00,00,00,00,00,00,00,00,00,00,00,ff,ff
+"data_0x00000014"=hex:ff,ff,ff,ff,ff,ff,ff,7f,00,00,00,00,00,00,01,00
+"data_0x00000015"=hex:00,00,00,00,01,e8,00,00,01,00,00,00,00,00,00,00
+"data_0x00000016"=hex:00,00,00,00,ff,ff,ff,ff,ff,ff,ff,ff,ff,7f,00,00
+"data_0x00000017"=hex:00,00,00,00,00,00,8a,2b,00,00,01,00,00,00,00,00
+"data_0x00000018"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,ff,7f
+"data_0x00000019"=hex:00,00,01,00,00,00,1c,e8,00,00,00,00,00,00,00,00
+"data_0x0000001A"=hex:00,00,dc,00,00,00,b8,02,00,00,04,20,00,00,00,00
+"data_0x0000001B"=hex:00,80,00,00,00,00,00,00,01,00,00,00,02,00,00,00
+"data_0x0000001C"=hex:8a,2b,00,00,00,00,00,80,00,00,00,00,c8,00,00,00
+"data_0x0000001D"=hex:96,00,00,00,dc,00,00,00,d5,03,00,00,c8,00,00,00
+"data_0x0000001E"=hex:c8,00,00,00,01,00,00,00,01,00,00,00,d8,27,00,00
+"data_0x0000001F"=hex:1e,e8,00,00,01,00,00,00,ff,7f,00,00,bc,8f,40,00
+"data_0x00000020"=hex:01,00,00,00,04,20,00,00,00,00,00,00,00,00,00,00
+"data_0x00000021"=hex:00,00,00,80,00,00,00,00,00,00,00,00,00,00,00,00
+"data_0x00000022"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+"data_0x00000023"=hex:c8,00,00,00,c8,00,00,00,00,00,00,40,a4,06,00,00
+"data_0x00000024"=hex:00,00,00,00,00,00,00,00,c8,00,00,00,c8,00,00,00
+"data_0x00000025"=hex:a4,06,00,00,4b,00,00,00,00,00,00,00,4b,00,00,00
+"data_0x00000026"=hex:c8,00,00,00,c8,00,00,00,00,00,00,00,ff,ff,ff,ff
+"data_0x00000027"=hex:ff,ff,ff,ff,00,00,00,00
+
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\ProfUIS\Profiles\Revo Uninstaller Pro\DynamicBarSite]
+"data_size"=dword:00000018
+"data_integrity"="00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"
+"data_generator"="Prof-UIS registry archiver rev. 0"
+"library_version"="Prof-UIS v. 3.4.6.0"
+"data_line_size"=dword:00000010
+"data_block_size"=dword:00000080
+"data_fmt_rev"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\ProfUIS\Profiles\Revo Uninstaller Pro\DynamicBarSite\block_0x00000000]
+"data_0x00000000"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+"data_0x00000001"=hex:00,00,00,00,00,00,00,00
+
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\ProfUIS\Profiles\Revo Uninstaller Pro-command-manager-profile\CommandManager]
+"data_size"=dword:0000001c
+"data_integrity"="00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"
+"data_generator"="Prof-UIS registry archiver rev. 0"
+"library_version"="Prof-UIS v. 3.4.6.0"
+"data_line_size"=dword:00000010
+"data_block_size"=dword:00000080
+"data_fmt_rev"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\ProfUIS\Profiles\Revo Uninstaller Pro-command-manager-profile\CommandManager\block_0x00000000]
+"data_0x00000000"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+"data_0x00000001"=hex:00,00,00,00,00,00,00,00,00,00,00,00
+
+; ─────────────────────────────────────────────
+;  PROFUIS - Colunas da lista de programas (ReportGrid)
+; ─────────────────────────────────────────────
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\ProfUIS\Profiles\Revo Uninstaller Pro\ReportGrid\AllProgramsReportGridSettings]
+"data_size"=dword:000004f0
+"data_integrity"="02 AF 7B 10 05 83 26 9E 0C 30 82 20 00 85 FB F1"
+"data_generator"="Prof-UIS registry archiver rev. 0"
+"library_version"="Prof-UIS v. 3.4.6.0"
+"data_line_size"=dword:00000010
+"data_block_size"=dword:00000080
+"data_fmt_rev"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\ProfUIS\Profiles\Revo Uninstaller Pro\ReportGrid\AllProgramsReportGridSettings\block_0x00000000]
+"data_0x00000000"=hex:03,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+"data_0x00000001"=hex:00,00,00,00,0b,00,00,00,ff,fe,ff,10,4d,00,61,00
+"data_0x00000002"=hex:69,00,6e,00,20,00,49,00,6e,00,66,00,6f,00,72,00
+"data_0x00000003"=hex:6d,00,61,00,74,00,69,00,6f,00,6e,00,ff,fe,ff,07
+"data_0x00000004"=hex:43,00,6f,00,6d,00,70,00,61,00,6e,00,79,00,1f,00
+"data_0x00000005"=hex:00,00,03,00,00,00,96,00,00,00,0a,00,00,00,ff,7f
+"data_0x00000006"=hex:00,00,00,00,00,00,00,00,e0,3f,ff,fe,ff,10,4d,00
+"data_0x00000007"=hex:61,00,69,00,6e,00,20,00,49,00,6e,00,66,00,6f,00
+"data_0x00000008"=hex:72,00,6d,00,61,00,74,00,69,00,6f,00,6e,00,ff,fe
+"data_0x00000009"=hex:ff,0b,41,00,70,00,70,00,6c,00,69,00,63,00,61,00
+"data_0x0000000A"=hex:74,00,69,00,6f,00,6e,00,3b,00,00,00,01,00,00,00
+"data_0x0000000B"=hex:10,02,00,00,0a,00,00,00,ff,7f,00,00,00,00,00,00
+"data_0x0000000C"=hex:00,00,e0,3f,ff,fe,ff,10,4d,00,61,00,69,00,6e,00
+"data_0x0000000D"=hex:20,00,49,00,6e,00,66,00,6f,00,72,00,6d,00,61,00
+"data_0x0000000E"=hex:74,00,69,00,6f,00,6e,00,ff,fe,ff,07,57,00,65,00
+"data_0x0000000F"=hex:62,00,73,00,69,00,74,00,65,00,1f,00,00,00,01,00
+"data_0x00000010"=hex:00,00,96,00,00,00,0a,00,00,00,ff,7f,00,00,00,00
+"data_0x00000011"=hex:00,00,00,00,e0,3f,ff,fe,ff,10,4d,00,61,00,69,00
+"data_0x00000012"=hex:6e,00,20,00,49,00,6e,00,66,00,6f,00,72,00,6d,00
+"data_0x00000013"=hex:61,00,74,00,69,00,6f,00,6e,00,ff,fe,ff,04,53,00
+"data_0x00000014"=hex:69,00,7a,00,65,00,1f,00,00,00,03,00,00,00,fe,00
+"data_0x00000015"=hex:00,00,0a,00,00,00,ff,7f,00,00,00,00,00,00,00,00
+"data_0x00000016"=hex:e0,3f,ff,fe,ff,10,4d,00,61,00,69,00,6e,00,20,00
+"data_0x00000017"=hex:49,00,6e,00,66,00,6f,00,72,00,6d,00,61,00,74,00
+"data_0x00000018"=hex:69,00,6f,00,6e,00,ff,fe,ff,07,43,00,6f,00,6d,00
+"data_0x00000019"=hex:6d,00,65,00,6e,00,74,00,1f,00,00,00,01,00,00,00
+"data_0x0000001A"=hex:96,00,00,00,0a,00,00,00,ff,7f,00,00,00,00,00,00
+"data_0x0000001B"=hex:00,00,e0,3f,ff,fe,ff,10,4d,00,61,00,69,00,6e,00
+"data_0x0000001C"=hex:20,00,49,00,6e,00,66,00,6f,00,72,00,6d,00,61,00
+"data_0x0000001D"=hex:74,00,69,00,6f,00,6e,00,ff,fe,ff,07,56,00,65,00
+"data_0x0000001E"=hex:72,00,73,00,69,00,6f,00,6e,00,1f,00,00,00,03,00
+"data_0x0000001F"=hex:00,00,64,00,00,00,0a,00,00,00,ff,7f,00,00,00,00
+"data_0x00000020"=hex:00,00,00,00,e0,3f,ff,fe,ff,10,4d,00,61,00,69,00
+"data_0x00000021"=hex:6e,00,20,00,49,00,6e,00,66,00,6f,00,72,00,6d,00
+"data_0x00000022"=hex:61,00,74,00,69,00,6f,00,6e,00,ff,fe,ff,10,55,00
+"data_0x00000023"=hex:6e,00,69,00,6e,00,73,00,74,00,61,00,6c,00,6c,00
+"data_0x00000024"=hex:20,00,53,00,74,00,72,00,69,00,6e,00,67,00,1f,00
+"data_0x00000025"=hex:00,00,01,00,00,00,96,00,00,00,0a,00,00,00,ff,7f
+"data_0x00000026"=hex:00,00,00,00,00,00,00,00,e0,3f,ff,fe,ff,10,4d,00
+"data_0x00000027"=hex:61,00,69,00,6e,00,20,00,49,00,6e,00,66,00,6f,00
+"data_0x00000028"=hex:72,00,6d,00,61,00,74,00,69,00,6f,00,6e,00,ff,fe
+"data_0x00000029"=hex:ff,04,54,00,79,00,70,00,65,00,1f,00,00,00,03,00
+"data_0x0000002A"=hex:00,00,2a,00,00,00,0a,00,00,00,ff,7f,00,00,00,00
+"data_0x0000002B"=hex:00,00,00,00,e0,3f,ff,fe,ff,10,4d,00,61,00,69,00
+"data_0x0000002C"=hex:6e,00,20,00,49,00,6e,00,66,00,6f,00,72,00,6d,00
+"data_0x0000002D"=hex:61,00,74,00,69,00,6f,00,6e,00,ff,fe,ff,0c,52,00
+"data_0x0000002E"=hex:65,00,67,00,69,00,73,00,74,00,72,00,79,00,20,00
+"data_0x0000002F"=hex:4b,00,65,00,79,00,1f,00,00,00,03,00,00,00,96,00
+"data_0x00000030"=hex:00,00,0a,00,00,00,ff,7f,00,00,00,00,00,00,00,00
+"data_0x00000031"=hex:e0,3f,ff,fe,ff,10,4d,00,61,00,69,00,6e,00,20,00
+"data_0x00000032"=hex:49,00,6e,00,66,00,6f,00,72,00,6d,00,61,00,74,00
+"data_0x00000033"=hex:69,00,6f,00,6e,00,ff,fe,ff,0c,49,00,6e,00,73,00
+"data_0x00000034"=hex:74,00,61,00,6c,00,6c,00,20,00,44,00,61,00,74,00
+"data_0x00000035"=hex:65,00,1f,00,00,00,03,00,00,00,b3,00,00,00,0a,00
+"data_0x00000036"=hex:00,00,ff,7f,00,00,00,00,00,00,00,00,e0,3f,ff,fe
+"data_0x00000037"=hex:ff,10,4d,00,61,00,69,00,6e,00,20,00,49,00,6e,00
+"data_0x00000038"=hex:66,00,6f,00,72,00,6d,00,61,00,74,00,69,00,6f,00
+"data_0x00000039"=hex:6e,00,ff,fe,ff,07,47,00,72,00,6f,00,75,00,70,00
+"data_0x0000003A"=hex:49,00,44,00,3f,00,00,00,00,00,00,00,0a,00,00,00
+"data_0x0000003B"=hex:0a,00,00,00,ff,7f,00,00,00,00,00,00,00,00,e0,3f
+"data_0x0000003C"=hex:03,00,00,00,ff,fe,ff,10,4d,00,61,00,69,00,6e,00
+"data_0x0000003D"=hex:20,00,49,00,6e,00,66,00,6f,00,72,00,6d,00,61,00
+"data_0x0000003E"=hex:74,00,69,00,6f,00,6e,00,ff,fe,ff,0b,41,00,70,00
+"data_0x0000003F"=hex:70,00,6c,00,69,00,63,00,61,00,74,00,69,00,6f,00
+"data_0x00000040"=hex:6e,00,ff,fe,ff,10,4d,00,61,00,69,00,6e,00,20,00
+"data_0x00000041"=hex:49,00,6e,00,66,00,6f,00,72,00,6d,00,61,00,74,00
+"data_0x00000042"=hex:69,00,6f,00,6e,00,ff,fe,ff,04,53,00,69,00,7a,00
+"data_0x00000043"=hex:65,00,ff,fe,ff,10,4d,00,61,00,69,00,6e,00,20,00
+"data_0x00000044"=hex:49,00,6e,00,66,00,6f,00,72,00,6d,00,61,00,74,00
+"data_0x00000045"=hex:69,00,6f,00,6e,00,ff,fe,ff,0c,49,00,6e,00,73,00
+"data_0x00000046"=hex:74,00,61,00,6c,00,6c,00,20,00,44,00,61,00,74,00
+"data_0x00000047"=hex:65,00,02,00,00,00,01,00,00,00,ff,fe,ff,10,4d,00
+"data_0x00000048"=hex:61,00,69,00,6e,00,20,00,49,00,6e,00,66,00,6f,00
+"data_0x00000049"=hex:72,00,6d,00,61,00,74,00,69,00,6f,00,6e,00,ff,fe
+"data_0x0000004A"=hex:ff,07,47,00,72,00,6f,00,75,00,70,00,49,00,44,00
+"data_0x0000004B"=hex:01,ff,fe,ff,10,4d,00,61,00,69,00,6e,00,20,00,49
+"data_0x0000004C"=hex:00,6e,00,66,00,6f,00,72,00,6d,00,61,00,74,00,69
+"data_0x0000004D"=hex:00,6f,00,6e,00,ff,fe,ff,0b,41,00,70,00,70,00,6c
+"data_0x0000004E"=hex:00,69,00,63,00,61,00,74,00,69,00,6f,00,6e,00,01
+
+; ─────────────────────────────────────────────
+;  RUEXT - Menus de contexto (PT-BR)
+; ─────────────────────────────────────────────
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\RUExt]
+"in"="Instalar com o Revo Uninstaller Pro"
+"inh"="Instalar o programa selecionado com o Revo Uninstaller Pro"
+"un"="Desinstalar com o Revo Uninstaller Pro"
+"unh"="Desinstalar o programa selecionado com o Revo Uninstaller Pro"
+
+; ─────────────────────────────────────────────
+;  UNINSTALLER - Configurações do desinstalador
+; ─────────────────────────────────────────────
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\Uninstaller]
+"ShowCHB"=dword:00000001
+"Focus Traced"=dword:00000000
+"New programs type"=dword:00000001
+"New Days"=dword:00000007
+"Disable Uninstall History"=dword:00000000
+"StopRunExe"=dword:00000001
+"Create System Restore Pont"=dword:00000000
+"Create FRB"=dword:00000000
+"Uninstaller del type"=dword:00000002
+"BackUpReg"=dword:00000000
+"NewGroupID"=dword:00000002
+
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\Uninstaller\AllProgs]
+"ShowScanForAllUsers"=dword:00000000
+"Use Reg Install Date"=dword:00000000
+"ViewType"=dword:00000002
+"Show System Components"=dword:00000001
+"Show Web Page Shortcuts"=dword:00000000
+"Sort by column"=dword:00000000
+"Sort type"=dword:00000001
+"Disable scan after uninstall"=dword:00000000
+"Maximize uninstall wizard"=dword:00000000
+"Select leftovers by default"=dword:00000000
+"Search for log"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\Uninstaller\AllProgs\FolderExclude]
+"C:\\Users\\Administrator\\AppData\\Local\\VS Revo Group\\Revo Uninstaller Pro\\Logs"=dword:00000001
+"C:\\Users\\Administrator\\AppData\\Local\\VS Revo Group\\Revo Uninstaller Pro"=dword:00000001
+"C:\\Users\\Administrator\\AppData\\Local\\VS Revo Group\\Revo Uninstaller Pro\\HistoryData"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\Uninstaller\AllProgs\RegExclude]
+"HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\CLSID"=dword:00000004
+"HKEY_CURRENT_USER\\*\\SOFTWARE\\Classes\\CLSID"=dword:00000004
+"HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\TypeLib"=dword:00000004
+"HKEY_CURRENT_USER\\*\\SOFTWARE\\Classes\\TypeLib"=dword:00000004
+"HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\Interface"=dword:00000004
+"HKEY_CURRENT_USER\\*\\SOFTWARE\\Classes\\Interface"=dword:00000004
+"HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\AppID"=dword:00000004
+"HKEY_CURRENT_USER\\*\\SOFTWARE\\Classes\\AppID"=dword:00000004
+"HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes"=dword:00000004
+"HKEY_CURRENT_USER\\*\\SOFTWARE\\Classes"=dword:00000004
+"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall"=dword:00000004
+"HKEY_CURRENT_USER\\*\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall"=dword:00000004
+"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services"=dword:00000004
+"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Enum"=dword:00000004
+"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control"=dword:00000004
+"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\Shell"=dword:0000000c
+"HKEY_CURRENT_USER\\*\\SOFTWARE\\Microsoft\\Windows\\Shell"=dword:0000000c
+"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\ShellNoRoam"=dword:0000000c
+"HKEY_CURRENT_USER\\*\\SOFTWARE\\Microsoft\\Windows\\ShellNoRoam"=dword:0000000c
+
+; ─────────────────────────────────────────────
+;  GRUPOS PERSONALIZADOS
+; ─────────────────────────────────────────────
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\Uninstaller\Groups]
+"Internet"=dword:00003a9e
+"Jogos"=dword:00003a9f
+"Multimídia"=dword:00003aa0
+"Utilitários"=dword:00003aa1
+
+; ─────────────────────────────────────────────
+;  JUNK FILES - Extensões e exclusões de limpeza
+; ─────────────────────────────────────────────
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\Junk Files\General]
+"Delete to bin"=dword:00000000
+"Ignore last 24 fours"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\Junk Files\General\Extensions]
+"*.tmp"=dword:00000001
+"*.temp"=dword:00000001
+"*.old"=dword:00000001
+"*.gid"=dword:00000001
+"*.fts"=dword:00000001
+"*.$$$"=dword:00000001
+"*.---"=dword:00000001
+"*.??$"=dword:00000001
+"*.___"=dword:00000001
+"*.~mp"=dword:00000001
+"*._mp"=dword:00000001
+"*.$db"=dword:00000001
+"*.db$"=dword:00000001
+"*.dmp"=dword:00000001
+"thumbs.db"=dword:00000001
+"*.??~"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\VS Revo Group\Revo Uninstaller Pro\Junk Files\Exclude]
+"*/sendto/"=dword:00000001
+"*/i386/"=dword:00000001
+"*/resources/themes/"=dword:00000001
+"*/temporary internet files/"=dword:00000001
+"*/application data/aim/"=dword:00000001
+"*/system32/usmt/"=dword:00000001
+"*/system32/dtclog/"=dword:00000001
+"*/norton antivirus/quarantine/"=dword:00000001
+"*/temp/incredimail/"=dword:00000001
+"%CommonProgramFiles%/"=dword:00000001
+"%ProgramFiles%/uninstall information/"=dword:00000001
+"%windir%/security/"=dword:00000001
+"?:/recycle?/"=dword:00000001
+"?:/_restore/"=dword:00000001
+"?:/system volume information/"=dword:00000001
+"*/system32/catroot2/"=dword:00000001
+"*/symantec shared/virusdefs/"=dword:00000001
+"*/application data/microsoft/"=dword:00000001
+"?:/$recycle*/"=dword:00000001
+"*.~enc"=dword:00000001
+"%windir%/twain_32/"=dword:00000001
+"%CommonProgramFiles(x86)%/"=dword:00000001
+"%ProgramFiles(x86)%/uninstall information/"=dword:00000001
+"%windir%/system32/catroot/"=dword:00000001
+"%windir%/ServiceProfiles/LocalService/AppData/Local/FontCache/"=dword:00000001
+
