@@ -133,12 +133,27 @@
   };
 
   const buildPrompt = (questions) => {
-    let p = `Responda cada pergunta abaixo com a letra correta (a, b, c, d ou e). Retorne APENAS um JSON no formato: {"respostas": {"1": "b", "2": "c", ...}} sem nenhum texto adicional.\n\n`;
+    let p = `Você receberá uma lista de perguntas objetivas de múltipla escolha.
+  Sua tarefa é:
+  1. Ler cuidadosamente cada pergunta.
+  2. Identificar a alternativa correta entre a, b, c, d ou e.
+  3. Responder todas as questões obrigatoriamente.
+  4. Não pular nenhuma pergunta.
+  5. Não explicar o raciocínio.
+  ⚠️ Regras obrigatórias de saída:
+  * Retorne somente JSON válido.
+  * Não escreva comentários, explicações, títulos ou texto extra.
+  * Use exatamente este formato:
+  {"respostas":{"1":"a","2":"b","3":"c"}}
+  ⚠️ Cada número da questão deve ser uma chave em texto. ⚠️ Cada resposta deve conter apenas uma letra minúscula: a, b, c, d ou e. ⚠️ Se houver dúvida, escolha a alternativa mais provável.
+  Responda agora às questões:\n\n`;
+  
     questions.forEach((q) => {
       p += `Pergunta ${q.index}: ${q.text}\n`;
       q.options.forEach((o) => (p += `${o.label} ${o.answer}\n`));
       p += "\n";
     });
+  
     return p;
   };
 
